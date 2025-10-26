@@ -11,7 +11,7 @@ router.post("/gerar-plano", async (req, res) => {
     if (!tema || !etapa || !disciplina) {
       return res
         .status(400)
-        .json({ error: "Tema, etapa e disciplina são obrigatórios." });
+        .json({ error: "Tema, etapa e disciplina são obrigatórios" });
     }
 
     const prompt = `Crie um plano de aula detalhado para a disciplina ${disciplina} ensinando ${tema} para um aluno da etapa ${etapa}.
@@ -44,7 +44,7 @@ Gere a resposta exatamente neste formato JSON para que possamos consumir no fron
       return res.status(500).json({ error: "Falha ao gerar plano de aula." });
     }
 
-    //Pega o token no Supabase
+    //Pega o token do front (gerado pelo supabase)
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith("Bearer ")) {
       return res.status(401).json({ error: "Token de autenticação ausente." });
@@ -58,6 +58,7 @@ Gere a resposta exatamente neste formato JSON para que possamos consumir no fron
     if (userError || !userData?.user) {
       return res.status(401).json({ error: "Usuário não autenticado." });
     }
+    //depois de autenticar, pega o id do usuario no banco
     const userId = userData.user.id;
 
     //  Salvar no Supabase vinculando ao user_id
@@ -87,12 +88,15 @@ Gere a resposta exatamente neste formato JSON para que possamos consumir no fron
 
 router.get("/listar-planos", async (req, res) => {
   try {
+    //pegando token do front
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith("Bearer ")) {
       return res.status(401).json({ error: "Token ausente." });
     }
 
     const token = authHeader.split(" ")[1];
+
+    //autenticando usuario usando o token
     const { data: userData, error: userError } = await supabase.auth.getUser(
       token
     );
