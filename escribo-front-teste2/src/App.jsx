@@ -5,11 +5,9 @@ import { supabase } from "./supabaseClient";
 import "./App.css";
 
 function App() {
-  // Login
   const [loginEmail, setLoginEmail] = useState("");
   const [loginSenha, setLoginSenha] = useState("");
 
-  // Cadastro
   const [cadastroNome, setCadastroNome] = useState("");
   const [cadastroEmail, setCadastroEmail] = useState("");
   const [cadastroSenha, setCadastroSenha] = useState("");
@@ -17,10 +15,8 @@ function App() {
   //Navegacao do react-router
   const navigate = useNavigate();
 
-  // Mensagem de status
   const [mensagem, setMensagem] = useState("");
 
-  // Login com Supabase
   async function handleLogin(e) {
     e.preventDefault();
     setMensagem("Entrando...");
@@ -44,7 +40,6 @@ function App() {
     }
   }
 
-  // Cadastro com Supabase
   async function handleCadastro(e) {
     e.preventDefault();
     setMensagem("Cadastrando");
@@ -68,7 +63,6 @@ function App() {
   return (
     <>
       <div className="container">
-        {/* Login */}
         <div className="form">
           <h2>Login</h2>
           <form onSubmit={handleLogin}>
@@ -92,7 +86,6 @@ function App() {
 
         <div className="divider"></div>
 
-        {/* Cadastro */}
         <div className="form">
           <h2>Criar Conta</h2>
           <form onSubmit={handleCadastro}>
@@ -123,9 +116,7 @@ function App() {
       </div>
 
       {/* Mensagem de status */}
-      {mensagem && (
-        <p style={{ textAlign: "center", marginTop: "20px" }}>{mensagem}</p>
-      )}
+      {mensagem && <p className="mensagem">{mensagem}</p>}
     </>
   );
 }

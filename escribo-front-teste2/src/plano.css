@@ -96,7 +96,6 @@ body {
 
 /* sidebar */
 
-/* === Sidebar lateral fixa === */
 .sidebar {
   position: fixed;
   left: 0;
@@ -110,20 +109,17 @@ body {
   overflow-y: auto;
 }
 
-/* Título da sidebar */
 .sidebar-title {
   margin-bottom: 15px;
   font-weight: bold;
 }
 
-/* Lista de planos */
 .sidebar-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Cada item de plano */
 .sidebar-item {
   display: flex;
   justify-content: center;
@@ -138,7 +134,6 @@ body {
   transition: background 0.2s ease;
 }
 
-/* Hover para o item */
 .sidebar-item:hover {
   background: #efefef;
 }

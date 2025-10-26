@@ -21,7 +21,7 @@ export default function Plano() {
     try {
       const {
         data: { session },
-      } = await supabase.auth.getSession(); // Supabase v2
+      } = await supabase.auth.getSession();
       const token = session?.access_token;
 
       const response = await axios.post(
