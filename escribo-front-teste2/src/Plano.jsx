@@ -33,7 +33,7 @@ export default function Plano() {
       const token = session?.access_token;
 
       const response = await axios.post(
-        "http://localhost:5000/gerar-plano",
+        `${import.meta.env.VITE_BACKEND_URL}/gerar-plano`,
         { tema, etapa, disciplina },
         {
           headers: {
@@ -72,7 +72,7 @@ export default function Plano() {
     const fetchPlanos = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/listar-planos",
+          `${import.meta.env.VITE_BACKEND_URL}/listar-planos`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -93,9 +93,12 @@ export default function Plano() {
     e.stopPropagation();
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/excluir-plano/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `${import.meta.env.VITE_BACKEND_URL}/excluir-plano/${id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       // Atualiza a lista removendo o plano deletado
       setGetResultado((prev) => prev.filter((p) => p.id !== id));
     } catch (error) {
