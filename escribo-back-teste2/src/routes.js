@@ -29,7 +29,7 @@ O plano deve incluir os seguintes campos em JSON:
 Gere a resposta exatamente neste formato JSON para que possamos consumir no front-end.`;
 
     const response = await gemini.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-2.5-flash-lite",
       contents: prompt,
     });
 
