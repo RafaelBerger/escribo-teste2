@@ -89,22 +89,22 @@ export default function Plano() {
     fetchPlanos();
   }, []);
 
-  const handleExcluirPlano = async (e, id) => {
-    e.stopPropagation();
-    try {
-      const token = localStorage.getItem("token");
-      await axios.delete(
-        `${import.meta.env.VITE_BACKEND_URL}/excluir-plano/${id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      // Atualiza a lista removendo o plano deletado
-      setGetResultado((prev) => prev.filter((p) => p.id !== id));
-    } catch (error) {
-      console.error("Erro ao excluir plano:", error);
-    }
-  };
+  // const handleExcluirPlano = async (e, id) => {
+  //   e.stopPropagation();
+  //   try {
+  //     const token = localStorage.getItem("token");
+  //     await axios.delete(
+  //       `${import.meta.env.VITE_BACKEND_URL}/excluir-plano/${id}`,
+  //       {
+  //         headers: { Authorization: `Bearer ${token}` },
+  //       }
+  //     );
+  //     // Atualiza a lista removendo o plano deletado
+  //     setGetResultado((prev) => prev.filter((p) => p.id !== id));
+  //   } catch (error) {
+  //     console.error("Erro ao excluir plano:", error);
+  //   }
+  // };
 
   return (
     <>
@@ -123,13 +123,13 @@ export default function Plano() {
               <br /> <br /> {plano.tema}
               <br />
               <br />
-              <button
+              {/* <button
                 className="btn-excluir"
                 onClick={(e) => handleExcluirPlano(e, plano.id)}
               >
                 {" "}
                 Excluir
-              </button>
+              </button> */}
             </li>
           ))}
         </ul>
