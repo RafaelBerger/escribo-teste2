@@ -43,6 +43,7 @@ Crie um arquivo `.env` na raiz de cada pasta (`escribo-front-teste2` e `escribo-
 | :--- | :--- |
 | `VITE_SUPABASE_URL` | URL do seu projeto supabase (termina em: `.supabase.co`). |
 | `VITE_SUPABASE_ANON_KEY` | Chave de conexão pública com o Supabase. |
+| `VITE_BACKEND_URL` | URL do backend (produção ou local) |
 
 #### .ENV do Back-End
 
