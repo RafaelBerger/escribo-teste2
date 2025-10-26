@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { supabase } from "./supabaseClient";
 import "./plano.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Plano() {
   const [tema, setTema] = useState("");
@@ -12,6 +13,13 @@ export default function Plano() {
   const [resultado, setResultado] = useState(null);
 
   const [getResultado, setGetResultado] = useState([]);
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+  };
 
   const handleGerarPlano = async (e) => {
     e.preventDefault();
@@ -123,6 +131,10 @@ export default function Plano() {
           ))}
         </ul>
       </aside>
+
+      <button className="btn-logout" onClick={handleLogout}>
+        Logout
+      </button>
 
       <div className="container">
         <div className="form">
