@@ -7,15 +7,15 @@ dotenv.config();
 
 const app = express();
 
-const origens = [
-  "http://localhost:5173",
-  "https://planejador-de-aulas.vercel.app/",
-  "https://escribo-teste2.onrender.com",
-];
+// const origens = [
+//   "http://localhost:5173",
+//   "https://planejador-de-aulas.vercel.app/",
+//   "https://escribo-teste2.onrender.com",
+// ];
 
 app.use(
   cors({
-    origin: origens,
+    origin: "*",
   })
 );
 app.use(express.json());
