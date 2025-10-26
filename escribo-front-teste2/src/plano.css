@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 8=0%;
+  padding: 40px;
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background-color: #3b40a4;
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+}
+
+.resultado h3 {
+  margin-top: 0;
+}
+
+/* passo a passo */
+
+.passo-a-passo-container {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+.passo-lista {
+  padding-left: 20px;
+}
+
+.passo-item {
+  margin-bottom: 15px;
+}
+
+.passo-descricao {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.passo-detalhe {
+  color: #555;
+  display: block;
+}
+
+/* sidebar */
+
+/* === Sidebar lateral fixa === */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+}
+
+/* Título da sidebar */
+.sidebar-title {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Lista de planos */
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada item de plano */
+.sidebar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Hover para o item */
+.sidebar-item:hover {
+  background: #efefef;
+}
+
+/* === Ajuste no conteúdo principal (para não ficar escondido) === */
+.main-content {
+  margin-left: 250px; /* mesma largura da sidebar */
+  padding: 20px;
+}
+
+.btn-excluir {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
