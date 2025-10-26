@@ -6,9 +6,16 @@ import router from "./routes.js";
 dotenv.config();
 
 const app = express();
+
+const origens = [
+  "http://localhost:5173",
+  "https://planejador-de-aulas.vercel.app/",
+  "https://meu-outro-frontend.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173", //url do front
+    origin: origens,
   })
 );
 app.use(express.json());
