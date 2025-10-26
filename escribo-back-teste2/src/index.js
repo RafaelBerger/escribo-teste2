@@ -10,7 +10,7 @@ const app = express();
 const origens = [
   "http://localhost:5173",
   "https://planejador-de-aulas.vercel.app/",
-  "https://meu-outro-frontend.onrender.com",
+  "https://escribo-teste2.onrender.com",
 ];
 
 app.use(
