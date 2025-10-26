@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { supabase } from "./supabaseClient";
@@ -16,6 +16,15 @@ function App() {
   const navigate = useNavigate();
 
   const [mensagem, setMensagem] = useState("");
+
+  useEffect(() => {
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (session) {
+        localStorage.setItem("token", session.access_token);
+        console.log("Token salvo no localStorage:", session.access_token);
+      }
+    });
+  }, []);
 
   async function handleLogin(e) {
     e.preventDefault();
